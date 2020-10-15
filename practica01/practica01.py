@@ -33,11 +33,16 @@ for x in arch:
         suma_tiempos = suma_tiempos + int(datos[0]) * int(datos[1])
     indice = indice + 1
 
+
 # Regresar el resultado
 if(bandera == '-d'):
-    print("Tiempo total: "+str(suma_tiempos * float(datos[0])))
+    duracion = float(datos[0])
+    print("Tiempo total: "+str(suma_tiempos * duracion))
+elif(bandera == '-f'):
+    duracion = float(datos[0])
+    print("Tiempo total: "+str(suma_tiempos * (1/duracion)))
 else:
-    print("Tiempo total: "+str(suma_tiempos * (1/float(datos[0]))))
+    print("Bandera no reconocida")
 
 ''' Ecuación del desempeño
 Tiempo del programa = (instrucciones del programa X ciclos de reloj)/frecuencia
